@@ -1,0 +1,13 @@
+mark = open('marks.txt','r')
+result = open('result.txt','w')
+result.write('Name\tTotal\n')
+mark.readline()
+line = mark.readline()
+while line:
+    line = line.split('\t')
+    total = int(line[1])+int(line[2])+int(line[3])
+    result.write('{}\t{}\n'.format(line[0],total))
+    line = mark.readline()
+mark.close()
+result.close()
+##print(line[0],total,sep='\t')
